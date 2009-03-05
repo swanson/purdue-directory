@@ -18,6 +18,19 @@
 @synthesize addr;
 @synthesize univ;
 
+- (id) init {
+	if(self = [super init])
+	{
+		name = @"testing";
+		phone = @"123";
+		email = @"testing@test";
+		addr = @"123 test";
+		univ = @"engr";
+	}
+	return self;
+}
+
+
 -(void)dealloc {
 	[name release];
 	[phone release];

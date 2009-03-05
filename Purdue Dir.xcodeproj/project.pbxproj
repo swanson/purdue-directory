@@ -19,6 +19,7 @@
 		C9A3A6760F5DECB400DC28CB /* detailedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A3A6750F5DECB400DC28CB /* detailedView.xib */; };
 		C9A3A69E0F5DEEE700DC28CB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A3A69D0F5DEEE700DC28CB /* Person.m */; };
 		C9A3A71A0F5DF79D00DC28CB /* iphone_back.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A3A7190F5DF79D00DC28CB /* iphone_back.png */; };
+		CAC7D8300F606E600012BEC9 /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D82F0F606E600012BEC9 /* PersonCell.m */; };
 		FA1DE9620F5DD1CE0009BC01 /* resultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1DE9610F5DD1CE0009BC01 /* resultsViewController.m */; };
 		FA1DE9A30F5DD1F30009BC01 /* resultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,8 @@
 		C9A3A69C0F5DEEE700DC28CB /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		C9A3A69D0F5DEEE700DC28CB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		C9A3A7190F5DF79D00DC28CB /* iphone_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_back.png; sourceTree = "<group>"; };
+		CAC7D82E0F606E600012BEC9 /* PersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCell.h; sourceTree = "<group>"; };
+		CAC7D82F0F606E600012BEC9 /* PersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCell.m; sourceTree = "<group>"; };
 		FA1DE9600F5DD1CE0009BC01 /* resultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resultsViewController.h; path = ../resultsViewController.h; sourceTree = "<group>"; };
 		FA1DE9610F5DD1CE0009BC01 /* resultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = resultsViewController.m; path = ../resultsViewController.m; sourceTree = "<group>"; };
 		FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = resultsView.xib; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CAC7D82E0F606E600012BEC9 /* PersonCell.h */,
+				CAC7D82F0F606E600012BEC9 /* PersonCell.m */,
 				C9A3A69C0F5DEEE700DC28CB /* Person.h */,
 				C9A3A69D0F5DEEE700DC28CB /* Person.m */,
 				C9A3A66C0F5DEC7E00DC28CB /* detailedViewController.h */,
@@ -201,6 +206,7 @@
 				FA1DE9620F5DD1CE0009BC01 /* resultsViewController.m in Sources */,
 				C9A3A66E0F5DEC7E00DC28CB /* detailedViewController.m in Sources */,
 				C9A3A69E0F5DEEE700DC28CB /* Person.m in Sources */,
+				CAC7D8300F606E600012BEC9 /* PersonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +249,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphonesimulator2.2;
 			};
 			name = Debug;
 		};
@@ -256,7 +262,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphonesimulator2.2;
 			};
 			name = Release;
 		};

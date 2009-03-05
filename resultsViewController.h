@@ -11,20 +11,26 @@
 #import "Person.h"
 
 
-@interface resultsViewController : UIViewController {
+@interface resultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 	NSString *lastName;
 	NSString *firstName;
-	UIWebView *webView;
 	detailedViewController *detailedView;
-	UIButton *button;
+	UITableView *resultsTable;
+	NSMutableArray *resultsArray;
+	NSMutableString *currentPropertyValue;
+	Person	*aPerson;
 
 }
-- (IBAction)getDetails:(id)sender;
+- (void)getDetails:(Person *)person;
+- (void) addResult:(NSObject *)person;
+- (id) locationForCell:(NSUInteger) cellNum;
 
-@property(nonatomic, retain) IBOutlet UIButton *button;
+@property(nonatomic, retain) NSMutableString * currentPropertyValue;
+@property(nonatomic, retain) Person *aPerson;
+@property(nonatomic, retain) NSMutableArray *resultsArray;
+@property(nonatomic, retain) IBOutlet UITableView *resultsTable;
 @property(nonatomic, retain) NSString *lastName;
 @property(nonatomic, retain) NSString *firstName;
-@property(nonatomic, retain) IBOutlet UIWebView *webView;
 @property(nonatomic, retain) detailedViewController *detailedView;
 
 
