@@ -80,11 +80,11 @@
 	
 	//TODO: fix this when we add the parser!!
 	//fill in the person attributes to display
-	detailedView.person.name=person.name;
+	detailedView.person.name=[person.name capitalizedString];
 	detailedView.person.email=person.email;
 	detailedView.person.phone=person.phone;
-	detailedView.person.addr=person.addr;
-	detailedView.person.univ=person.univ;	
+	detailedView.person.addr=[person.addr capitalizedString];
+	detailedView.person.univ=[person.univ capitalizedString];	
 	//push the detailed contact info view onto the stack
 	Purdue_DirAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 	[delegate.navigationController pushViewController:detailedView animated:YES];
@@ -125,6 +125,7 @@
 	}
     
 	NSString * test = [(Person *)[self locationForCell:indexPath.row] getName];
+	test = [test capitalizedString];
 	//cell.text = [NSString stringWithFormat:@"%@ %g", locationTitle, [(Location *)[appDelegate locationForCell:indexPath.row] getDistance]];
     cell.text = [NSString stringWithFormat:@"%@", test];
 	// Set up the cell
