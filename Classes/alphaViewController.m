@@ -112,6 +112,29 @@
 	return sectionName;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSInteger index = [indexPath section];
+	[tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+	NSString *emailURL = [[	NSString alloc] init];
+	NSString *telURL = [[NSString alloc] init];
+	emailURL = [@"mailto:" stringByAppendingString:person.email];
+	telURL = [@"tel:" stringByAppendingString:person.phone];
+	switch(index)
+	{
+		case 1:
+
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:emailURL]];	
+			NSLog(@"%@",emailURL);
+			break;
+		case 2:
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:telURL]];	
+			NSLog(@"%@",telURL);
+			break;
+	}
+
+	//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://google.com"]];
+}
+
 
 - (void)dealloc {
 	[person release];
