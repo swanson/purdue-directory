@@ -22,6 +22,8 @@
 		CAC7D8300F606E600012BEC9 /* PersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D82F0F606E600012BEC9 /* PersonCell.m */; };
 		FA1DE9620F5DD1CE0009BC01 /* resultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1DE9610F5DD1CE0009BC01 /* resultsViewController.m */; };
 		FA1DE9A30F5DD1F30009BC01 /* resultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */; };
+		FA499C300F6457E200868B1C /* alphaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA499C2F0F6457E200868B1C /* alphaView.xib */; };
+		FA499C350F6459F900868B1C /* alphaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA499C340F6459F900868B1C /* alphaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,9 @@
 		FA1DE9600F5DD1CE0009BC01 /* resultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resultsViewController.h; path = ../resultsViewController.h; sourceTree = "<group>"; };
 		FA1DE9610F5DD1CE0009BC01 /* resultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = resultsViewController.m; path = ../resultsViewController.m; sourceTree = "<group>"; };
 		FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = resultsView.xib; sourceTree = "<group>"; };
+		FA499C2F0F6457E200868B1C /* alphaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = alphaView.xib; sourceTree = "<group>"; };
+		FA499C330F6459F900868B1C /* alphaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alphaViewController.h; sourceTree = "<group>"; };
+		FA499C340F6459F900868B1C /* alphaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alphaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA499C330F6459F900868B1C /* alphaViewController.h */,
+				FA499C340F6459F900868B1C /* alphaViewController.m */,
 				CAC7D82E0F606E600012BEC9 /* PersonCell.h */,
 				CAC7D82F0F606E600012BEC9 /* PersonCell.m */,
 				C9A3A69C0F5DEEE700DC28CB /* Person.h */,
@@ -116,6 +123,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA499C2F0F6457E200868B1C /* alphaView.xib */,
 				C9A3A6750F5DECB400DC28CB /* detailedView.xib */,
 				FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
@@ -190,6 +198,7 @@
 				FA1DE9A30F5DD1F30009BC01 /* resultsView.xib in Resources */,
 				C9A3A6760F5DECB400DC28CB /* detailedView.xib in Resources */,
 				C9A3A71A0F5DF79D00DC28CB /* iphone_back.png in Resources */,
+				FA499C300F6457E200868B1C /* alphaView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +216,7 @@
 				C9A3A66E0F5DEC7E00DC28CB /* detailedViewController.m in Sources */,
 				C9A3A69E0F5DEEE700DC28CB /* Person.m in Sources */,
 				CAC7D8300F606E600012BEC9 /* PersonCell.m in Sources */,
+				FA499C350F6459F900868B1C /* alphaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

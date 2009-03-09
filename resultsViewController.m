@@ -9,12 +9,13 @@
 #import "resultsViewController.h"
 #import "Purdue_DirAppDelegate.h"
 #import "PersonCell.h"
+#import "Person.h"
 
 
 @implementation resultsViewController
 @synthesize firstName;
 @synthesize lastName;
-@synthesize detailedView;
+@synthesize alphaView;
 @synthesize resultsTable;
 @synthesize	resultsArray, aPerson, currentPropertyValue;
 
@@ -76,18 +77,18 @@
 
 - (void)getDetails:(Person *)person{
 	//call detailedView constructor, which will call Person constructor for us
-	detailedView = [[detailedViewController alloc] initWithNibName:@"detailedView" bundle:[NSBundle mainBundle]];
+	alphaView = [[alphaViewController alloc] initWithNibName:@"alphaView" bundle:[NSBundle mainBundle]];
 	
 	//TODO: fix this when we add the parser!!
 	//fill in the person attributes to display
-	detailedView.person.name=[person.name capitalizedString];
-	detailedView.person.email=person.email;
-	detailedView.person.phone=person.phone;
-	detailedView.person.addr=[person.addr capitalizedString];
-	detailedView.person.univ=[person.univ capitalizedString];	
+	alphaView.person.name=[person.name capitalizedString];
+	alphaView.person.email=person.email;
+	alphaView.person.phone=person.phone;
+	alphaView.person.addr=[person.addr capitalizedString];
+	alphaView.person.univ=[person.univ capitalizedString];	
 	//push the detailed contact info view onto the stack
 	Purdue_DirAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-	[delegate.navigationController pushViewController:detailedView animated:YES];
+	[delegate.navigationController pushViewController:alphaView animated:YES];
 }
 
 - (void) addResult:(NSObject *)person {
@@ -126,6 +127,7 @@
     
 	NSString * test = [(Person *)[self locationForCell:indexPath.row] getName];
 	test = [test capitalizedString];
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	//cell.text = [NSString stringWithFormat:@"%@ %g", locationTitle, [(Location *)[appDelegate locationForCell:indexPath.row] getDistance]];
     cell.text = [NSString stringWithFormat:@"%@", test];
 	// Set up the cell
@@ -246,7 +248,7 @@
 - (void)dealloc {
 	[firstName release];
 	[lastName release];
-	[detailedView release];
+	[alphaView release];
     [super dealloc];
 }
 

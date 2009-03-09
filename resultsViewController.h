@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "detailedViewController.h"
 #import "Person.h"
+#import "alphaViewController.h"
+
+@class Person;
 
 
 @interface resultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 	NSString *lastName;
 	NSString *firstName;
-	detailedViewController *detailedView;
+	//detailedViewController *detailedView;
+	alphaViewController *alphaView;
 	UITableView *resultsTable;
 	NSMutableArray *resultsArray;
 	NSMutableString *currentPropertyValue;
@@ -31,7 +35,8 @@
 @property(nonatomic, retain) IBOutlet UITableView *resultsTable;
 @property(nonatomic, retain) NSString *lastName;
 @property(nonatomic, retain) NSString *firstName;
-@property(nonatomic, retain) detailedViewController *detailedView;
+//@property(nonatomic, retain) detailedViewController *detailedView;
+@property(nonatomic, retain) alphaViewController *alphaView;
 
 
 

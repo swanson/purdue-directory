@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "resultsViewController.h"
 
-@interface RootViewController : UIViewController <UITextFieldDelegate, UIWebViewDelegate> {
+
+
+@interface RootViewController : UIViewController <UITextFieldDelegate> {
 	UITextField *lastNameField;
 	UITextField *firstNameField;
 	resultsViewController *secondView;
