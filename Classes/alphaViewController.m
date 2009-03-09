@@ -97,7 +97,7 @@
 			sectionName = [NSString stringWithString:@"Name"];
 			break;
 		case 1:
-			sectionName = [NSString stringWithString:@"E-Mail"];
+			sectionName = [NSString stringWithString:@"Email"];
 			break;
 		case 2:
 			sectionName = [NSString stringWithString:@"Phone Number"];
