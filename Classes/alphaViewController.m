@@ -8,17 +8,21 @@
 
 #import "alphaViewController.h"
 #import "Person.h"
+#import <AddressBook/AddressBook.h>
 
 
 @implementation alphaViewController
 @synthesize person;
+@synthesize toolBar;
+@synthesize addContact;
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Custom initialization
-		self.title = @"Details";
+		
 		self.person = [[Person alloc] init];
+		self.title = @"Details";
     }
     return self;
 }
@@ -122,7 +126,6 @@
 	switch(index)
 	{
 		case 1:
-
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:emailURL]];	
 			NSLog(@"%@",emailURL);
 			break;
@@ -133,6 +136,46 @@
 	}
 
 	//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://google.com"]];
+}
+
+- (IBAction) addContact:(id)sender {
+	NSLog(@"Got to addContact");
+	ABAddressBookRef addressBook = ABAddressBookCreate();
+	ABRecordRef newPerson = ABPersonCreate();
+	CFErrorRef anError;
+	
+	//add in the first name, last name, and phone number
+	
+	NSString *fName = [[NSString alloc] autorelease];
+	NSString *lName = [[NSString alloc] autorelease];
+	NSString *phone = [[NSString alloc] autorelease];
+	NSString *emailAdd = [[NSString alloc] autorelease];
+	NSArray *names = [[NSArray	alloc] autorelease];
+	
+	names = [person.name componentsSeparatedByString:@" "];
+	fName = [names objectAtIndex:0];
+	if ([names count] >= 3) 
+		lName = [names objectAtIndex:2];
+	else
+		lName = [names objectAtIndex:1];
+		
+	phone = person.phone;
+	emailAdd = person.email;
+	
+	ABMutableMultiValueRef phoneNumberMultiValue = ABMultiValueCreateMutable(kABPersonPhoneProperty);
+	ABMultiValueAddValueAndLabel(phoneNumberMultiValue ,phone,kABPersonPhoneMobileLabel, NULL);
+	ABRecordSetValue(newPerson, kABPersonLastNameProperty,lName,&anError);
+	ABRecordSetValue(newPerson, kABPersonFirstNameProperty,fName,&anError);
+	ABMutableMultiValueRef emailMultiValue = ABMultiValueCreateMutable(kABStringPropertyType);
+	ABMultiValueAddValueAndLabel(emailMultiValue ,emailAdd,kABWorkLabel, NULL);
+	ABRecordSetValue(newPerson, kABPersonEmailProperty, emailMultiValue, &anError);
+	//ABRecordSetValue(newPerson, kABPersonEmailProperty,emailAdd,&anError);
+	ABRecordSetValue(newPerson, kABPersonPhoneProperty, phoneNumberMultiValue, &anError);
+	ABAddressBookAddRecord(addressBook, newPerson, &anError);
+	ABAddressBookSave(addressBook, &anError);
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Contact Added"message:@"This contact information has successfully been added to your phone." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 

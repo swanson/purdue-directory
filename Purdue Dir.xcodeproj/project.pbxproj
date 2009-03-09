@@ -24,6 +24,7 @@
 		FA1DE9A30F5DD1F30009BC01 /* resultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */; };
 		FA499C300F6457E200868B1C /* alphaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA499C2F0F6457E200868B1C /* alphaView.xib */; };
 		FA499C350F6459F900868B1C /* alphaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA499C340F6459F900868B1C /* alphaViewController.m */; };
+		FAAFAF530F65C88C004720BE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFAF520F65C88C004720BE /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		FA499C2F0F6457E200868B1C /* alphaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = alphaView.xib; sourceTree = "<group>"; };
 		FA499C330F6459F900868B1C /* alphaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alphaViewController.h; sourceTree = "<group>"; };
 		FA499C340F6459F900868B1C /* alphaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alphaViewController.m; sourceTree = "<group>"; };
+		FAAFAF520F65C88C004720BE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				FAAFAF530F65C88C004720BE /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +140,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAAFAF520F65C88C004720BE /* AddressBook.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
