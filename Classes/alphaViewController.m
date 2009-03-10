@@ -123,12 +123,16 @@
 	NSString *telURL = [[NSString alloc] init];
 	NSString *mapURL = [[NSString alloc] init];
 	
-	emailURL = [@"mailto:" stringByAppendingString:person.email];
-	telURL = [@"tel:" stringByAppendingString:person.phone];
+	emailURL = [@"mailto: " stringByAppendingString:person.email];
+	emailURL = [emailURL stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+	telURL = [@"tel: " stringByAppendingString:person.phone];
 	telURL = [telURL stringByReplacingOccurrencesOfString:@"-" withString:@""];
 	telURL = [telURL stringByReplacingOccurrencesOfString:@" " withString:@""];
 	telURL = [telURL stringByReplacingOccurrencesOfString:@"+" withString:@""];	
-	mapURL = [@"http://maps.google.com/maps?q=" stringByAppendingString:person.addr];
+	telURL = [telURL stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+	mapURL = [@"http://maps.google.com/maps?q=" stringByAppendingString:[person addr]];
+	mapURL = [mapURL stringByReplacingOccurrencesOfString:@"$" withString:@" "];
+	mapURL = [mapURL stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
 	switch(index)
 	{
 		case 1:
