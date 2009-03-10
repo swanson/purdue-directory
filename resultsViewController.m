@@ -17,7 +17,7 @@
 @synthesize lastName;
 @synthesize alphaView;
 @synthesize resultsTable;
-@synthesize	resultsArray, aPerson, currentPropertyValue;
+@synthesize	resultsArray, aPerson, currentPropertyValue, error;
 
 
 
@@ -51,15 +51,34 @@
 	[parser setDelegate:self];
 	[parser initWithContentsOfURL:url];
 		
-	if([parser parse])
+	if([parser parse]){
 		NSLog(@"Parsing was successful");
-	else
+		if ([resultsArray count] == 0){ //no results were found, but no error
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No results found!" message:@"Please try a different search." 
+													   delegate:self cancelButtonTitle:@"Return" otherButtonTitles:nil];
+			[alert show];
+		}
+	}else{
 		NSLog(@"Parsing was unsuccessful");
-		
+		//error -- too many results
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Too many results!" message:@"Please try to narrow your search." 
+													   delegate:self cancelButtonTitle:@"Return" otherButtonTitles:nil];
+		[alert show];
+	}
 	[parser dealloc];
-		
+
     [super viewDidLoad];
 }
+
+- (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex{ 
+	//method is called when the user dismisses the UIAlertView popup message, pop back to search view
+	if (buttonIndex == 0) { // return pushed
+		Purdue_DirAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+		[delegate.navigationController popViewControllerAnimated:YES];
+		return;
+	}
+}
+
 
 
 /*
@@ -165,6 +184,8 @@
 	// why is this done...
 	if(qualifiedName) elementName = qualifiedName;
 	
+	//if ([elementName isEqualToString:@"error"])
+	//	NSLog(@"error tag found!");	
 	if([elementName isEqualToString:@"person"])
 	{
 		self.aPerson = [[Person alloc] init];
@@ -188,6 +209,8 @@
 	else if([elementName isEqualToString:@"addr"])
 		self.currentPropertyValue = [NSMutableString string];
 	else if([elementName isEqualToString:@"univ"])
+		self.currentPropertyValue = [NSMutableString string];	
+	else if([elementName isEqualToString:@"error"])
 		self.currentPropertyValue = [NSMutableString string];
 	else currentPropertyValue = nil;
 	
@@ -198,9 +221,9 @@
 	
 	if(qName) elementName = qName;
 	
-	NSLog(currentPropertyValue);
-	NSLog(@"NULL?");
 	// set the values of the location
+	//if([elementName isEqualToString:@"error"])
+	//	NSLog(@"end of error found");
 	if([elementName isEqualToString:@"name"])
 		self.aPerson.name=self.currentPropertyValue;
 		//[self.aPerson setName:self.currentPropertyValue];
@@ -216,8 +239,9 @@
 		//[self.currentLocation setLongitude:[self.currentPropertyValue doubleValue]];
 	else if([elementName isEqualToString:@"univ"])
 		aPerson.univ=self.currentPropertyValue;
-		//[self.currentLocation setDistance:[self.currentPropertyValue doubleValue]];
-	
+		//[self.currentLocation setDistance:[self.currentPropertyValue doubleValue]];	
+	else if([elementName isEqualToString:@"error"])
+		self.error=self.currentPropertyValue;
 	 
 }
 

@@ -17,6 +17,7 @@
 @interface resultsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 	NSString *lastName;
 	NSString *firstName;
+	NSString *error;
 	//detailedViewController *detailedView;
 	alphaViewController *alphaView;
 	UITableView *resultsTable;
@@ -28,6 +29,7 @@
 - (void)getDetails:(Person *)person;
 - (void) addResult:(NSObject *)person;
 - (id) locationForCell:(NSUInteger) cellNum;
+- (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @property(nonatomic, retain) NSMutableString * currentPropertyValue;
 @property(nonatomic, retain) Person *aPerson;
@@ -35,6 +37,7 @@
 @property(nonatomic, retain) IBOutlet UITableView *resultsTable;
 @property(nonatomic, retain) NSString *lastName;
 @property(nonatomic, retain) NSString *firstName;
+@property(nonatomic, retain) NSString *error;
 //@property(nonatomic, retain) detailedViewController *detailedView;
 @property(nonatomic, retain) alphaViewController *alphaView;
 
