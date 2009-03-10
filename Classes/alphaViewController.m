@@ -85,7 +85,7 @@
 			cell.text = person.univ;
 			break;
 		case 4:
-			cell.text = person.addr;
+			cell.text = [person.addr stringByReplacingOccurrencesOfString:@"$" withString:@"\n"];
 			break;
 	}
 	return cell;
@@ -121,17 +121,27 @@
 	[tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
 	NSString *emailURL = [[	NSString alloc] init];
 	NSString *telURL = [[NSString alloc] init];
+	NSString *mapURL = [[NSString alloc] init];
+	
 	emailURL = [@"mailto:" stringByAppendingString:person.email];
 	telURL = [@"tel:" stringByAppendingString:person.phone];
+	telURL = [telURL stringByReplacingOccurrencesOfString:@"-" withString:@""];
+	telURL = [telURL stringByReplacingOccurrencesOfString:@" " withString:@""];
+	telURL = [telURL stringByReplacingOccurrencesOfString:@"+" withString:@""];	
+	mapURL = [@"http://maps.google.com/maps?q=" stringByAppendingString:person.addr];
 	switch(index)
 	{
 		case 1:
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:emailURL]];	
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:emailURL]];	
 			NSLog(@"%@",emailURL);
 			break;
 		case 2:
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:telURL]];	
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:telURL]];	
 			NSLog(@"%@",telURL);
+			break;
+		case 4:
+			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURL]];	
+			NSLog(@"%@",mapURL);
 			break;
 	}
 
