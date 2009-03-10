@@ -24,6 +24,7 @@
 		FA1DE9A30F5DD1F30009BC01 /* resultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1DE9A20F5DD1F30009BC01 /* resultsView.xib */; };
 		FA499C300F6457E200868B1C /* alphaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA499C2F0F6457E200868B1C /* alphaView.xib */; };
 		FA499C350F6459F900868B1C /* alphaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA499C340F6459F900868B1C /* alphaViewController.m */; };
+		FA926DBA0F65E5F100F3A337 /* pdir.png in Resources */ = {isa = PBXBuildFile; fileRef = FA926DB90F65E5F100F3A337 /* pdir.png */; };
 		FAAFAF530F65C88C004720BE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAFAF520F65C88C004720BE /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		FA499C2F0F6457E200868B1C /* alphaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = alphaView.xib; sourceTree = "<group>"; };
 		FA499C330F6459F900868B1C /* alphaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alphaViewController.h; sourceTree = "<group>"; };
 		FA499C340F6459F900868B1C /* alphaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alphaViewController.m; sourceTree = "<group>"; };
+		FA926DB90F65E5F100F3A337 /* pdir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdir.png; sourceTree = "<group>"; };
 		FAAFAF520F65C88C004720BE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FA926DB90F65E5F100F3A337 /* pdir.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -203,6 +206,7 @@
 				C9A3A6760F5DECB400DC28CB /* detailedView.xib in Resources */,
 				C9A3A71A0F5DF79D00DC28CB /* iphone_back.png in Resources */,
 				FA499C300F6457E200868B1C /* alphaView.xib in Resources */,
+				FA926DBA0F65E5F100F3A337 /* pdir.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
